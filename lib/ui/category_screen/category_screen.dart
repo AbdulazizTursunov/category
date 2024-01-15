@@ -43,88 +43,90 @@ class _CategoryScreenState extends State<CategoryScreen> {
         centerTitle: true,
       ),
       body: ListView.builder(
-          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 5),
-          itemCount: categoryList.length,
-          itemBuilder: (context, index) {
-            CategoryModel item = categoryList[index];
-            return Container(
-              margin: const EdgeInsets.symmetric(vertical: 5),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(16),
-                  border: Border.all(color: Colors.teal, width: 2),
-                  color: Colors.white),
-              child: ListTile(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => SubScreen(id: item.id),
-                    ),
-                  );
-                },
-                title: Row(
-                  children: [
-                    Text('nomi: ${item.nomi}', style: stylee),
-                    const Spacer(),
-                    IconButton(
-                      onPressed: () {
-                        nomiController.text = item.nomi;
-                        showDialog(
-                          context: context,
-                          builder: (context) {
-                            return AlertDialog(
-                              actions: [
-                                Column(
-                                  children: [
-                                    TextField(
-                                      controller: nomiController,
-                                    ),
-                                    ElevatedButton(
-                                        onPressed: () {
-                                          CategoryModel updatecategory =
-                                              CategoryModel();
-                                          updatecategory.nomi =
-                                              nomiController.text;
-                                          updatecategory.update();
-                                          _selectAllCategory();
-                                          setState(() {});
-                                          nomiController.clear();
-                                          Navigator.of(context).pop();
-                                        },
-                                        child: const Text("Tahrirlash"))
-                                  ],
-                                )
-                              ],
-                            );
-                          },
-                        );
-                      },
-                      icon: const Icon(
-                        Icons.edit,
-                        color: Colors.yellow,
-                      ),
-                    ),
-                  ],
-                ),
-                subtitle: Row(
-                  children: [
-                    Text('id: ${item.id}', style: stylee),
-                    const Spacer(),
-                    IconButton(
-                        onPressed: () {
-                          item.delete();
-                          _selectAllCategory();
-                          setState(() {});
+        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 5),
+        itemCount: categoryList.length,
+        itemBuilder: (context, index) {
+          CategoryModel item = categoryList[index];
+          return Container(
+            margin: const EdgeInsets.symmetric(vertical: 5),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(16),
+                border: Border.all(color: Colors.teal, width: 2),
+                color: Colors.white),
+            child: ListTile(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => SubScreen(id: item.id),
+                  ),
+                );
+              },
+              title: Row(
+                children: [
+                  Text('nomi: ${item.nomi}', style: stylee),
+                  const Spacer(),
+                  IconButton(
+                    onPressed: () {
+                      nomiController.text = item.nomi;
+                      showDialog(
+                        context: context,
+                        builder: (context) {
+                          return AlertDialog(
+                            actions: [
+                              Column(
+                                children: [
+                                  TextField(
+                                    controller: nomiController,
+                                  ),
+                                  ElevatedButton(
+                                      onPressed: () {
+                                        CategoryModel updatecategory =
+                                            CategoryModel();
+                                        updatecategory.nomi =
+                                            nomiController.text;
+                                        updatecategory.update();
+                                        _selectAllCategory();
+                                        setState(() {});
+                                        nomiController.clear();
+                                        Navigator.of(context).pop();
+                                      },
+                                      child: const Text("Tahrirlash"))
+                                ],
+                              )
+                            ],
+                          );
                         },
-                        icon: const Icon(
-                          Icons.delete,
-                          color: Colors.red,
-                        )),
-                  ],
-                ),
+                      );
+                    },
+                    icon: const Icon(
+                      Icons.edit,
+                      color: Colors.yellow,
+                    ),
+                  ),
+                ],
               ),
-            );
-          }),
+              subtitle: Row(
+                children: [
+                  Text('id: ${item.id}', style: stylee),
+                  const Spacer(),
+                  IconButton(
+                    onPressed: () {
+                      item.delete();
+                      _selectAllCategory();
+                      setState(() {});
+                    },
+                    icon: const Icon(
+                      Icons.delete,
+                      color: Colors.red,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          );
+        },
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           showDialog(
@@ -155,7 +157,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                 )
               ],
             ),
-           );
+          );
         },
         child: const Icon(Icons.add),
       ),

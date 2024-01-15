@@ -56,26 +56,26 @@ class _AddItemScreenState extends State<AddItemScreen> {
             ),
             const SizedBox(height: 15),
             const Text('categoriya'),
-             TextField(
+            TextField(
               controller: nomiController,
             ),
             const SizedBox(height: 15),
             const Text('narxi'),
-             TextField(
+            TextField(
               controller: narxiController,
             ),
             const SizedBox(height: 30),
             Center(
               child: ElevatedButton(
-                onPressed: () async{
+                onPressed: () async {
                   MahsulotModel addMahsulot = MahsulotModel();
                   addMahsulot.nomi = nomiController.text;
                   addMahsulot.narxi = int.parse(narxiController.text);
                   addMahsulot.categoryId = value;
-               await   addMahsulot.insert();
+                  await addMahsulot.insert();
                   setState(() {});
                 },
-                child: Text("qo'shish"),
+                child: const Text("qo'shish"),
               ),
             ),
           ],

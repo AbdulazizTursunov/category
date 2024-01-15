@@ -24,7 +24,7 @@ class MahsulotModel {
     return {
       'id': id,
       'narxi': narxi,
-      'nomi':nomi,
+      'nomi': nomi,
       'categoryId': categoryId,
     };
   }
@@ -38,6 +38,7 @@ class MahsulotModel {
     categoryId: $categoryId,
     ''';
   }
+
   Future<int> insert() async {
     MahsulotModel.obyektlar[id] = this;
     id = await service.insert(toJson());
@@ -53,13 +54,11 @@ class MahsulotModel {
     MahsulotModel.obyektlar[id] = this;
     await service.update(toJson(), where: "id='$id'");
   }
-
 }
 
 class MahsulotService extends CrudService {
   @override
   MahsulotService({super.prefix = ''}) : super('mahsulotTable');
-
 
   static String createTableS = """                
   CREATE TABLE "mahsulotTable" (

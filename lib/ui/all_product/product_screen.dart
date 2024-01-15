@@ -1,3 +1,4 @@
+import 'package:category/constant/constant_fields.dart';
 import 'package:category/data/model/category_model.dart';
 import 'package:category/data/model/mahsulot_model.dart';
 import 'package:category/ui/all_product/sub_screen/add_scren.dart';
@@ -47,15 +48,50 @@ class _AllProductState extends State<AllProduct> {
           // const SizedBox(height: 15),
           Expanded(
             child: ListView.builder(
-                itemCount: productList.length,
-                itemBuilder: (context, index) {
-                  MahsulotModel mahsulotItem = productList[index];
+              itemCount: productList.length,
+              itemBuilder: (context, index) {
+                MahsulotModel mahsulotItem = productList[index];
 
-                  return ListTile(
-                    title: Text(mahsulotItem.nomi),
-                    subtitle: Text(mahsulotItem.categoryId.toString()),
-                  );
-                }),
+                return Container(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+                  margin:
+                      const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                    border: Border.all(color: Colors.teal, width: 3),
+                  ),
+                  child: ListTile(
+                    title: Row(
+                      children: [
+                        Text(
+                          'nomi: ${mahsulotItem.nomi}',
+                          style: stylee,
+                        ),
+                        const Spacer(),
+                        Text(
+                          'id: ${mahsulotItem.id}',
+                          style: stylee2,
+                        )
+                      ],
+                    ),
+                    subtitle: Row(
+                      children: [
+                        Text(
+                          'narxi: ${mahsulotItem.narxi}\$',
+                          style: stylee,
+                        ),
+                        const Spacer(),
+                        Text(
+                          'categoryId: ${mahsulotItem.categoryId}',
+                          style: stylee2,
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              },
+            ),
           )
         ],
       ),
@@ -64,7 +100,7 @@ class _AllProductState extends State<AllProduct> {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) =>const AddItemScreen(),
+              builder: (context) => const AddItemScreen(),
             ),
           );
           _selectAllProduct();

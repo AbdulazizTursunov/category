@@ -91,7 +91,7 @@ class CategoryService extends CrudService {
   }
 
   @override
-  Future<void> update(Map map, {String? where})async {
+  Future<void> update(Map map, {String? where}) async {
     where = where == null ? "" : " WHERE $where";
 
     String updateClause = "";
@@ -106,6 +106,5 @@ class CategoryService extends CrudService {
     final String sql = "UPDATE $table SET $updateClause$where";
     await db.execute(sql, tables: [table], params: params);
     debugPrint('CategoryService "update" methodi ishladi');
-
   }
 }
