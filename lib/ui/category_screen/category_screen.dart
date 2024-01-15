@@ -1,7 +1,4 @@
-import 'package:category/constant/constant_fields.dart';
-import 'package:category/data/model/category_model.dart';
-import 'package:category/ui/category_screen/sub_screen/sub_screen.dart';
-import 'package:flutter/material.dart';
+import 'view.dart';
 
 class CategoryScreen extends StatefulWidget {
   const CategoryScreen({super.key});

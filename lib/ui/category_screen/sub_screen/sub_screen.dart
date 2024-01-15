@@ -1,7 +1,4 @@
-import 'package:category/constant/constant_fields.dart';
-import 'package:category/data/model/category_model.dart';
-import 'package:category/data/model/mahsulot_model.dart';
-import 'package:flutter/material.dart';
+import 'package:category/ui/category_screen/view.dart';
 
 class SubScreen extends StatefulWidget {
   const SubScreen({super.key, required this.id});
@@ -39,6 +36,7 @@ class _SubScreenState extends State<SubScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.white70,
         title: const Text('Sub Screen'),
         centerTitle: true,
       ),

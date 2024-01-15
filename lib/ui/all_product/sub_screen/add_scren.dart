@@ -1,7 +1,5 @@
-import 'package:category/constant/constant_fields.dart';
-import 'package:category/data/model/category_model.dart';
-import 'package:category/data/model/mahsulot_model.dart';
-import 'package:flutter/material.dart';
+import 'package:category/ui/all_product/view.dart';
+
 
 class AddItemScreen extends StatefulWidget {
   const AddItemScreen({super.key});
@@ -19,7 +17,13 @@ class _AddItemScreenState extends State<AddItemScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text(
+          "Mahsulot Qo'shish",
+          style: stylee,
+        ),
+      ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10.0),
         child: Column(

@@ -1,6 +1,4 @@
-import 'package:category/data/db/crud_service.dart';
-import 'package:category/data/db/db_initialize.dart';
-import 'package:flutter/material.dart';
+import 'view.dart';
 
 class CategoryModel {
   static CrudService service = CategoryService();

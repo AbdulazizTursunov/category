@@ -1,7 +1,4 @@
-import 'package:category/constant/constant_fields.dart';
-import 'package:category/ui/all_product/product_screen.dart';
-import 'package:category/ui/category_screen/category_screen.dart';
-import 'package:flutter/material.dart';
+import 'view.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
@@ -28,7 +25,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Colors.white70,
         title: Text(
           selectIndex == 0 ? "All Product" : "Category Product",
           style: stylee,

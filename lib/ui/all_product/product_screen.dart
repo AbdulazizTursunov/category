@@ -1,8 +1,4 @@
-import 'package:category/constant/constant_fields.dart';
-import 'package:category/data/model/category_model.dart';
-import 'package:category/data/model/mahsulot_model.dart';
-import 'package:category/ui/all_product/sub_screen/add_scren.dart';
-import 'package:flutter/material.dart';
+import 'view.dart';
 
 class AllProduct extends StatefulWidget {
   const AllProduct({super.key});
