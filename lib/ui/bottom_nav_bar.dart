@@ -1,3 +1,4 @@
+import 'package:category/constant/constant_fields.dart';
 import 'package:category/ui/all_product/product_screen.dart';
 import 'package:category/ui/category_screen/category_screen.dart';
 import 'package:flutter/material.dart';
@@ -25,23 +26,38 @@ class _BottomNavBarState extends State<BottomNavBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: Colors.white70,
+        title: Text(
+          selectIndex == 0 ? "All Product" : "Category Product",
+          style: stylee,
+        ),
+      ),
       body: screens[selectIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: selectIndex,
-        onTap: (v) {
-          setState(
-            () {
-              selectIndex = v;
-            },
-          );
-        },
-        items: const [
-          BottomNavigationBarItem(
-              icon: Icon(Icons.production_quantity_limits_rounded),
-              label: "product"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.category_outlined), label: "category"),
-        ],
+      bottomNavigationBar: ClipRRect(
+        borderRadius: const BorderRadius.only(
+          topLeft: Radius.circular(12),
+          topRight: Radius.circular(12),
+        ),
+        child: BottomNavigationBar(
+          backgroundColor: Colors.orange,
+          currentIndex: selectIndex,
+          onTap: (v) {
+            setState(
+              () {
+                selectIndex = v;
+              },
+            );
+          },
+          items: const [
+            BottomNavigationBarItem(
+                icon: Icon(Icons.production_quantity_limits_rounded),
+                label: "product"),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.category_outlined), label: "category"),
+          ],
+        ),
       ),
     );
   }

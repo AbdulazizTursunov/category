@@ -38,10 +38,10 @@ class _AllProductState extends State<AllProduct> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("All Product"),
-        centerTitle: true,
-      ),
+      // appBar: AppBar(
+      //   title:  Text("All Product",style: stylee,),
+      //   centerTitle: true,
+      // ),
       body: Column(
         children: [
           // TextField(),

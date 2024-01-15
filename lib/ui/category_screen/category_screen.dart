@@ -38,10 +38,10 @@ class _CategoryScreenState extends State<CategoryScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Category"),
-        centerTitle: true,
-      ),
+      // appBar: AppBar(
+      //   title: Text("Category",style: stylee.copyWith(fontSize: 20),),
+      //   centerTitle: true,
+      // ),
       body: ListView.builder(
         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 5),
         itemCount: categoryList.length,
@@ -52,7 +52,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(16),
                 border: Border.all(color: Colors.teal, width: 2),
-                color: Colors.white),
+                color: Colors.white70),
             child: ListTile(
               onTap: () {
                 Navigator.push(
@@ -81,11 +81,11 @@ class _CategoryScreenState extends State<CategoryScreen> {
                                   ),
                                   ElevatedButton(
                                       onPressed: () {
-                                        CategoryModel updatecategory =
+                                        CategoryModel updateCategory =
                                             CategoryModel();
-                                        updatecategory.nomi =
+                                        updateCategory.nomi =
                                             nomiController.text;
-                                        updatecategory.update();
+                                        updateCategory.update();
                                         _selectAllCategory();
                                         setState(() {});
                                         nomiController.clear();
